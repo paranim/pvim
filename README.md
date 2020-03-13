@@ -2,7 +2,7 @@
   <img src="screenshot.png" width="510" >
 </p>
 
-Paravim (or pvim) is an editor for Nim powered by Vim (via [libvim](https://github.com/paranim/libvim)) and rendered with OpenGL (via [paranim](https://github.com/paranim/paranim)). It is very alpha right now, and doesn't have any Nim-specific features yet, like syntax highlighting or code completion.
+Paravim (or pvim) is an editor for Nim powered by Vim (via [libvim](https://github.com/paranim/libvim)) and rendered with OpenGL (via [paranim](https://github.com/paranim/paranim)). This repo is for the main executable; most of the code is in a [separate library](https://github.com/paranim/paravim) for reusability.
 
 To use it, [install Nim](https://nim-lang.org/install.html) and do:
 
