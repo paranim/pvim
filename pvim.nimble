@@ -15,7 +15,8 @@ installExt    = @[
 ]
 bin           = @["pvim"]
 
-
+task dev, "Run dev version":
+  exec "nimble run pvim"
 
 # Dependencies
 
