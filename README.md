@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="screenshot.png" width="510" >
+  <img src="screenshot.png" width="512" >
 </p>
 
 Paravim (or pvim) is an editor for Nim powered by Vim (via [libvim](https://github.com/paranim/libvim)) and rendered with OpenGL (via [paranim](https://github.com/paranim/paranim)). This repo is for the main executable; most of the code is in a [separate library](https://github.com/paranim/paravim) for reusability.
