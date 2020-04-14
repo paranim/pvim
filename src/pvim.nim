@@ -7,8 +7,8 @@ from os import nil
 when isMainModule:
   doAssert glfwInit()
 
-  glfwWindowHint(GLFWContextVersionMajor, 4)
-  glfwWindowHint(GLFWContextVersionMinor, 1)
+  glfwWindowHint(GLFWContextVersionMajor, 3)
+  glfwWindowHint(GLFWContextVersionMinor, 3)
   glfwWindowHint(GLFWOpenglForwardCompat, GLFW_TRUE) # Used for Mac
   glfwWindowHint(GLFWOpenglProfile, GLFW_OPENGL_CORE_PROFILE)
   glfwWindowHint(GLFWResizable, GLFW_TRUE)
