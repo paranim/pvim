@@ -34,7 +34,7 @@ when isMainModule:
   while not w.windowShouldClose:
     core.tick(game, true)
     w.swapBuffers()
-    glfwPollEvents()
+    glfwWaitEvents()
 
   w.destroyWindow()
   glfwTerminate()
