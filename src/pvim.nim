@@ -32,9 +32,12 @@ when isMainModule:
   paravim.init(game, w, params)
 
   while not w.windowShouldClose:
-    paravim.tick(game, true)
+    let mustPoll = paravim.tick(game, true)
     w.swapBuffers()
-    glfwPollEvents()
+    if mustPoll:
+      glfwPollEvents()
+    else:
+      glfwWaitEvents()
 
   w.destroyWindow()
   glfwTerminate()
