@@ -1,7 +1,6 @@
 import nimgl/glfw
 from paranim/gl import nil
-from paravim/core import nil
-import paravim
+from paravim import nil
 from os import nil
 
 when isMainModule:
@@ -21,20 +20,21 @@ when isMainModule:
   w.makeContextCurrent()
   glfwSwapInterval(1)
 
-  discard w.setKeyCallback(keyCallback)
-  discard w.setCharCallback(charCallback)
-  discard w.setMouseButtonCallback(mouseButtonCallback)
-  discard w.setCursorPosCallback(cursorPosCallback)
-  discard w.setFramebufferSizeCallback(frameSizeCallback)
+  discard w.setKeyCallback(paravim.keyCallback)
+  discard w.setCharCallback(paravim.charCallback)
+  discard w.setMouseButtonCallback(paravim.mouseButtonCallback)
+  discard w.setCursorPosCallback(paravim.cursorPosCallback)
+  discard w.setFramebufferSizeCallback(paravim.frameSizeCallback)
+  discard w.setScrollCallback(paravim.scrollCallback)
 
   var game = gl.RootGame()
   let params = os.commandLineParams()
-  init(game, w, params)
+  paravim.init(game, w, params)
 
   while not w.windowShouldClose:
-    core.tick(game, true)
+    paravim.tick(game, true)
     w.swapBuffers()
-    glfwWaitEvents()
+    glfwPollEvents()
 
   w.destroyWindow()
   glfwTerminate()
