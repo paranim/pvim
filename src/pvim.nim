@@ -27,6 +27,8 @@ when isMainModule:
   discard w.setFramebufferSizeCallback(paravim.frameSizeCallback)
   discard w.setScrollCallback(paravim.scrollCallback)
 
+  w.setCursor(glfwCreateStandardCursor(GLFW_IBEAM_CURSOR))
+
   var game = gl.RootGame()
   let params = os.commandLineParams()
   paravim.init(game, w, params)
