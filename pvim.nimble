@@ -20,5 +20,5 @@ task dev, "Run dev version":
 
 # Dependencies
 
-requires "nim >= 1.0.6"
+requires "nim >= 1.2.0"
 requires "paravim >= 0.17.1"
