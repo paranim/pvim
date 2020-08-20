@@ -45,8 +45,8 @@ proc runGui(params: seq[string]) =
   w.destroyWindow()
   glfwTerminate()
 
-proc runTerminal() =
-  terminal.init()
+proc runTerminal(params: seq[string]) =
+  terminal.init(params)
   while true:
     terminal.tick()
     os.sleep(20)
@@ -68,4 +68,4 @@ when isMainModule:
   if guiMode:
     runGui(params)
   else:
-    runTerminal()
+    runTerminal(params)
