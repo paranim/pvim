@@ -56,11 +56,12 @@ when isMainModule:
     params = newSeq[string]()
     guiMode = true
   for param in os.commandLineParams():
-    if strutils.startsWith(param, "--"):
-      if param == "--terminal":
-        guiMode = false
-      else:
-        quit("Unrecognized parameter: " & param)
+    if strutils.startsWith(param, "-"):
+      case param:
+        of "--terminal", "-t":
+          guiMode = false
+        else:
+          quit("Unrecognized parameter: " & param)
     else:
       params.add(param)
 
