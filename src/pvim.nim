@@ -1,9 +1,10 @@
 import nimgl/glfw
 from paranim/gl import nil
 from paravim import nil
+from paravim/terminal import nil
 from os import nil
 
-when isMainModule:
+proc runGui(params: seq[string]) =
   doAssert glfwInit()
 
   glfwWindowHint(GLFWContextVersionMajor, 3)
@@ -30,7 +31,6 @@ when isMainModule:
   w.setCursor(glfwCreateStandardCursor(GLFW_IBEAM_CURSOR))
 
   var game = gl.RootGame()
-  let params = os.commandLineParams()
   paravim.init(game, w, params)
 
   while not w.windowShouldClose:
@@ -43,3 +43,24 @@ when isMainModule:
 
   w.destroyWindow()
   glfwTerminate()
+
+proc runTerminal() =
+  terminal.init()
+  while true:
+    terminal.tick()
+    os.sleep(20)
+
+when isMainModule:
+  var
+    params = newSeq[string]()
+    guiMode = true
+  for param in os.commandLineParams():
+    if param == "--terminal":
+      guiMode = false
+    else:
+      params.add(param)
+
+  if guiMode:
+    runGui(params)
+  else:
+    runTerminal()
