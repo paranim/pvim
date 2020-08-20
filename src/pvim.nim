@@ -3,6 +3,7 @@ from paranim/gl import nil
 from paravim import nil
 from paravim/terminal import nil
 from os import nil
+from strutils import nil
 
 proc runGui(params: seq[string]) =
   doAssert glfwInit()
@@ -55,8 +56,11 @@ when isMainModule:
     params = newSeq[string]()
     guiMode = true
   for param in os.commandLineParams():
-    if param == "--terminal":
-      guiMode = false
+    if strutils.startsWith(param, "--"):
+      if param == "--terminal":
+        guiMode = false
+      else:
+        quit("Unrecognized parameter: " & param)
     else:
       params.add(param)
 
