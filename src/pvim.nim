@@ -49,7 +49,7 @@ proc runTerminal(params: seq[string]) =
   terminal.init(params)
   while true:
     terminal.tick()
-    os.sleep(20)
+    os.sleep(5)
 
 when isMainModule:
   var
