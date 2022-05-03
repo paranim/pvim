@@ -1,4 +1,4 @@
-import nimgl/glfw
+import paranim/glfw
 from paranim/gl import nil
 from paravim import nil
 from paravim/terminal import nil
