@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.18.4"
+version       = "0.18.5"
 author        = "oakes"
 description   = "A parasitic editor"
 license       = "Public Domain"
@@ -21,4 +21,4 @@ task dev, "Run dev version":
 # Dependencies
 
 requires "nim >= 1.2.6"
-requires "paravim >= 0.18.4"
+requires "paravim >= 0.18.5"
